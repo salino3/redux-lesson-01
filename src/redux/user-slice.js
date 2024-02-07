@@ -26,6 +26,6 @@ export const userSlice = createSlice({
 });
 
 export const {addUser, changeEmail} = userSlice.actions;
-console.log("here", userSlice)
+
 export default userSlice.reducer;
 
