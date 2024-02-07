@@ -9,8 +9,6 @@ export const List = () => {
     const users = useSelector((state) => state.users);
     const dispatch = useDispatch();
 
-
-    console.log(users)
   return (
     <section>
       {users &&

@@ -10,8 +10,6 @@ function App() {
 // const LazyList = lazy(() => import("./components/list/list.component"));
 
 
-  const [count, setCount] = React.useState(0);
-
   return (
     <div className="App">
       <h1>Redux Toolkit Example</h1>
