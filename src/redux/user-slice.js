@@ -11,13 +11,13 @@ export const userSlice = createSlice({
     addUser: (state, action) => {
       return [action.payload, ...state];
     },
-    changeEmail: (state, action) => {
-      state.email = action.payload;
+    changeDataUser: (state, action) => {
+    return state.map((user) => user.id === action.payload.id ? action.payload : user )
     },
   },
 });
 
-export const {addUser, changeEmail} = userSlice.actions;
+export const { addUser, changeDataUser } = userSlice.actions;
 
 export default userSlice.reducer;
 
