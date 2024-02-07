@@ -8,7 +8,7 @@ export const UpdateUser = () => {
 
   const dispatch = useDispatch();
   const users = useSelector((state) => state.users);
-  
+
   const params = useParams();
   const navigate = useNavigate();
 
@@ -27,7 +27,7 @@ export const UpdateUser = () => {
      dispatch(changeDataUser(user));
      console.log(user);
 
-     navigate('/')
+     navigate('/');
    };
 
 

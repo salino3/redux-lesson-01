@@ -1,11 +1,14 @@
-import {useSelector} from 'react-redux';
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
+import { deleteUser } from "../../redux/user-slice";
 import './list.styles.css';
 
 
 export const List = () => {
 
     const users = useSelector((state) => state.users);
+    const dispatch = useDispatch();
+
 
     console.log(users)
   return (
@@ -29,7 +32,12 @@ export const List = () => {
               <Link to={`/update/${user.id}`}>
                 <button className="btnUpdate">Update</button>
               </Link>
-              <button className="btnDelete">Delete</button>
+              <button
+                onClick={() => dispatch(deleteUser(user.id))}
+                className="btnDelete"
+              >
+                Delete
+              </button>
             </li>
           </ul>
         ))}
