@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {useDispatch} from 'react-redux';
 import {addUser} from './redux/user-slice';
- import { Header } from "./components/header";
+ import { Header, Email } from "./components";
 import "./App.css";
 
 function App() {
@@ -22,6 +22,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <Email />
       <h1>Hola</h1>
     </div>
   );
