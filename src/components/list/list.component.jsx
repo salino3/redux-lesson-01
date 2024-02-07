@@ -1,4 +1,5 @@
 import {useSelector} from 'react-redux';
+import { Link } from 'react-router-dom';
 import './list.styles.css';
 
 
@@ -6,13 +7,12 @@ export const List = () => {
 
     const users = useSelector((state) => state.users);
 
-
     console.log(users)
   return (
     <section>
       {users &&
-        users.map((user, index) => (
-          <ul className="listUl" key={index}>
+        users.map((user) => (
+          <ul className="listUl" key={user.id}>
             <li>
               Name: &nbsp;
               <span className="spanValue">{user.name}</span>
@@ -26,7 +26,9 @@ export const List = () => {
               <span className="spanValue">{user.username}</span>
             </li>
             <li className="liBtns">
-              <button className="btnUpdate">Update</button>
+              <Link to={`/update/${user.id}`}>
+                <button className="btnUpdate">Update</button>
+              </Link>
               <button className="btnDelete">Delete</button>
             </li>
           </ul>

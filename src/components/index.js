@@ -1,2 +1,3 @@
-export * from './add-user';
-export * from './list';
+export * from "./add-user";
+export * from "./update-user";
+export * from "./list";

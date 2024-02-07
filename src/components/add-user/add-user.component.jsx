@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../../redux/user-slice.js";
 import './add-user.styles.css';
 
@@ -7,11 +7,14 @@ import './add-user.styles.css';
 export const AddUser = () => {
 
   const dispatch = useDispatch();
+  const users = useSelector((state) => state.users);
+
 
   const [user, setUser] = useState({
     name: "",
     username: "",
     email: "",
+    id: users.length + 1,
   });
     
 

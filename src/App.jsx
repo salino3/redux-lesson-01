@@ -1,9 +1,13 @@
-import React from "react";
-import { AddUser, List } from "./components";
+import React, {lazy, Suspense} from "react";
+import {  AddUser, List } from "./components";
 import "./App.css";
 
-function App() {
 
+
+
+function App() {
+  
+// const LazyList = lazy(() => import("./components/list/list.component"));
 
 
   const [count, setCount] = React.useState(0);
@@ -14,7 +18,12 @@ function App() {
       <AddUser />
       <br />
       <hr />
-      <List />
+        <List />
+      {/*
+      <Suspense fallback={<span>Loading...</span>}>
+       <LazyList />
+      </Suspense> 
+      */}
     </div>
   );
 }
