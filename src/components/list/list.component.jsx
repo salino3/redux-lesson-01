@@ -25,6 +25,10 @@ export const List = () => {
               Username: &nbsp;
               <span className="spanValue">{user.username}</span>
             </li>
+            <li className="liBtns">
+              <button className="btnUpdate">Update</button>
+              <button className="btnDelete">Delete</button>
+            </li>
           </ul>
         ))}
     </section>

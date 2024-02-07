@@ -7,3 +7,36 @@
     font-weight: 650;
 }
 
+.liBtns {
+    display: flex;
+    flex-direction: rows;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.liBtns button {
+    padding: 2px;
+}
+
+.btnDelete:focus, .btnUpdate:focus{
+ outline: 0;
+}
+
+.btnUpdate:active {
+ outline: 2px solid blue;
+}
+
+.btnUpdate {
+ color: blue;
+}
+
+.btnDelete:active {
+ outline: 2px solid red;
+}
+
+
+.btnDelete {
+ color: red;
+}
