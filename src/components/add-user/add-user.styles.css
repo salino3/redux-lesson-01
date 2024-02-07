@@ -1,0 +1,21 @@
+.myForm {
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.formComponent {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.btnSubmit {
+    border: solid;
+    padding: 5px;
+}

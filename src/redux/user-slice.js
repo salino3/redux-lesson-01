@@ -1,23 +1,15 @@
 import {createSlice} from '@reduxjs/toolkit';
+import {mockData} from '../apis';
 
 
-const initialState = {
-
-    name: "",
-    username: "",
-    email: ""
-};
 
 export const userSlice = createSlice({
     // slice name
-   name: "user",
-   initialState,
+   name: "users",
+   initialState: mockData,
    reducers: {
     addUser: (state, action) => {
-        const {name, username, email} = action.payload;
-        state.name = name;
-        state.username = username;
-        state.email = email;
+        return [action.payload, ...state]
     },
     changeEmail: (state, action) => {
         state.email = action.payload
