@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
-import { deleteUser } from "../../redux/user-slice";
+import { deleteUser } from "../../redux";
 import './list.styles.css';
 
 
@@ -17,7 +17,7 @@ export const List = () => {
         users.map((user) => (
           <ul className="listUl" key={user.id}>
             <li>
-              Name: &nbsp;
+              Name: &nbsp; 
               <span className="spanValue">{user.name}</span>
             </li>
             <li>

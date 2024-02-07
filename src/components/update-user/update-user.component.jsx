@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector} from 'react-redux';
-import { changeDataUser } from '../../redux/user-slice';
+import { changeDataUser } from '../../redux';
 import './update-user.styles.css';
 
 export const UpdateUser = () => {
@@ -25,8 +25,6 @@ export const UpdateUser = () => {
      event.preventDefault();
 
      dispatch(changeDataUser(user));
-     console.log(user);
-
      navigate('/');
    };
 
@@ -43,6 +41,7 @@ export const UpdateUser = () => {
             name="name"
             value={user.name}
             onChange={handleChange}
+            required
           />
         </div>
         <div className="formComponent">
@@ -53,6 +52,7 @@ export const UpdateUser = () => {
             name="username"
             value={user.username}
             onChange={handleChange}
+            required
           />
         </div>
         <div className="formComponent">
@@ -63,6 +63,7 @@ export const UpdateUser = () => {
             name="email"
             value={user.email}
             onChange={handleChange}
+            required
           />
         </div>
         <button className="btnSubmit" type="submit">

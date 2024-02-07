@@ -1,20 +1,19 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addUser } from "../../redux/user-slice.js";
+import { addUser, plusOne } from "../../redux";
 import './add-user.styles.css';
 
 
 export const AddUser = () => {
 
   const dispatch = useDispatch();
-  const users = useSelector((state) => state.users);
-
+  const newID = useSelector((state) => state.newID);
 
   const [user, setUser] = useState({
     name: "",
     username: "",
     email: "",
-    id: users.length + 1,
+    id: newID,
   });
     
 
@@ -27,7 +26,14 @@ export const AddUser = () => {
     event.preventDefault();
     
    dispatch(addUser(user));
+   dispatch(plusOne());
     console.log(user);
+     setUser({
+       name: "",
+       username: "",
+       email: "",
+       id: newID + 1,
+     });
   };
 
 useEffect(() => {
@@ -41,37 +47,40 @@ useEffect(() => {
       <form onSubmit={handleSubmit} className="myForm">
         <div className="formComponent">
           <label htmlFor="name">Name</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={user.name}
-          onChange={handleChange}
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={user.name}
+            onChange={handleChange}
+            required
           />
-          </div>
+        </div>
         <div className="formComponent">
           <label htmlFor="username">Username</label>
-        <input
-          type="text"
-          id="username"
-          name="username"
-          value={user.username}
-          onChange={handleChange}
+          <input
+            type="text"
+            id="username"
+            name="username"
+            value={user.username}
+            onChange={handleChange}
+            required
           />
-          </div>
-         <div className="formComponent">
+        </div>
+        <div className="formComponent">
           <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={user.email}
-          onChange={handleChange}
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={user.email}
+            onChange={handleChange}
+            required
           />
-          </div>
-          <button className="btnSubmit" type="submit">
-            Submit
-          </button>
+        </div>
+        <button className="btnSubmit" type="submit">
+          Submit
+        </button>
       </form>
     </>
   );
